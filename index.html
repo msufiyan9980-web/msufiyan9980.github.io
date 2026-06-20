@@ -26,7 +26,7 @@ body {
 
 /* Hero Section */
 .hero {
-  padding: 80px 20px;
+  padding: 0;
   text-align: center;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #2563eb 100%);
   position: relative;
@@ -42,12 +42,13 @@ body {
   bottom: 0;
   background: radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -55,12 +56,28 @@ body {
   gap: 30px;
 }
 
-/* Profile Image Container */
+/* Banner Image Container */
+.banner-image-container {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.banner-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+/* Profile Image Container (deprecated but kept for reference) */
 .profile-image-container {
   position: relative;
   width: 280px;
   height: 280px;
   margin: 0 auto;
+  display: none;
 }
 
 .profile-image-wrapper {
@@ -99,6 +116,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: none;
 }
 
 .hero p {
@@ -106,6 +124,7 @@ body {
   color: #cbd5e1;
   margin-bottom: 30px;
   font-weight: 400;
+  display: none;
 }
 
 .cta-buttons {
@@ -114,6 +133,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 20px;
+  padding: 20px;
 }
 
 .btn {
@@ -374,7 +394,15 @@ section > h2 {
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 20px;
+    padding: 0;
+  }
+
+  .banner-image-container {
+    width: 100%;
+  }
+
+  .banner-image-container img {
+    max-height: 400px;
   }
 
   .profile-image-container {
@@ -448,11 +476,9 @@ section > h2 {
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-content">
-    <!-- Profile Image -->
-    <div class="profile-image-container">
-      <div class="profile-image-wrapper">
-        <img src="profile.jpg" alt="Mohammed Sufiyan">
-      </div>
+    <!-- Banner Image -->
+    <div class="banner-image-container">
+      <img src="banner.jpg" alt="Mohammed Sufiyan - Sales & Business Professional">
     </div>
 
     <h1>Mohammed Sufiyan</h1>
@@ -480,7 +506,7 @@ section > h2 {
         Results-driven Product Consultant with 3+ years of progressive experience in SaaS, HRMS, Payroll Solutions, CRM systems, lead generation, market research, and international business development.
       </p>
       <p>
-        Passionate about leveraging technology and data-driven insights to solve complex business challenges. Skilled in managing cross-functional teams, developing go-to-market strategies, and implementing scalable solutions.
+        Passionate about leveraging technology and data-driven insights to solve complex business challenges. Skilled in managing cross-functional teams, developing go-to-market strategies, and implementing innovative solutions.
       </p>
       <p>
         Currently at Greytip Software, focusing on product strategy and customer success for HR & Payroll solutions. Experienced in international markets with strong understanding of market dynamics and customer needs.
