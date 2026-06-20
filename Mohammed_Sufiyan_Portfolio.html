@@ -5,91 +5,664 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohammed Sufiyan | Product Consultant & Business Development Professional</title>
 <meta name="description" content="Professional portfolio of Mohammed Sufiyan - Product Consultant, SaaS, HRMS & Payroll Solutions, Business Development and Sales Operations.">
+<meta property="og:title" content="Mohammed Sufiyan - Product Consultant & Business Development">
+<meta property="og:description" content="Explore my professional journey in SaaS, HRMS, and Business Development">
+<meta property="og:type" content="website">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-body{font-family:Inter,sans-serif;margin:0;background:#0f172a;color:#e2e8f0;line-height:1.6}
-.hero{padding:80px 20px;text-align:center;background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb)}
-.container{max-width:1100px;margin:auto;padding:40px 20px}
-.card{background:#1e293b;padding:25px;border-radius:18px;margin:15px 0}
-h1,h2{margin-bottom:10px}
-.btn{display:inline-block;padding:12px 22px;background:#3b82f6;color:white;text-decoration:none;border-radius:10px;margin:8px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.footer{text-align:center;padding:30px;background:#020617}
-.tag{display:inline-block;background:#334155;padding:8px 12px;border-radius:20px;margin:5px}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #2563eb 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #3b82f6;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #3b82f6;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #3b82f6;
+}
+
+.btn-secondary:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+/* Container & Layout */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+section {
+  margin-bottom: 80px;
+}
+
+section > h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #f1f5f9;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #3b82f6;
+}
+
+/* Cards */
+.card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 18px;
+  margin: 20px 0;
+  border: 1px solid #334155;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #334155;
+  border-color: #475569;
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #f1f5f9;
+}
+
+.card-meta {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-meta i {
+  color: #3b82f6;
+}
+
+.card-description {
+  color: #cbd5e1;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.achievements {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #334155;
+}
+
+.achievements li {
+  color: #cbd5e1;
+  margin: 8px 0;
+  margin-left: 20px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Tags & Skills */
+.tag {
+  display: inline-block;
+  background: #334155;
+  color: #cbd5e1;
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin: 6px 6px 6px 0;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  border: 1px solid #475569;
+}
+
+.tag:hover {
+  background: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+  transform: scale(1.05);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* About Me Section */
+.about-content {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 18px;
+  border: 1px solid #334155;
+}
+
+.about-content p {
+  color: #cbd5e1;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  background: #020617;
+  border-top: 1px solid #334155;
+  margin-top: 80px;
+}
+
+.footer p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Contact Section */
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  color: #3b82f6;
+}
+
+.contact-item div p {
+  color: #94a3b8;
+  margin: 0;
+}
+
+.contact-item div strong {
+  display: block;
+  color: #f1f5f9;
+  margin-bottom: 5px;
+}
+
+/* Certifications List */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.cert-item {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #3b82f6;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cert-item i {
+  font-size: 1.8rem;
+  color: #3b82f6;
+}
+
+.cert-item div {
+  flex: 1;
+}
+
+.cert-item strong {
+  color: #f1f5f9;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.cert-item span {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+/* Languages */
+.language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.language-item i {
+  color: #3b82f6;
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  section > h2 {
+    font-size: 1.8rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card, section > h2 {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Print Styles */
+@media print {
+  .hero {
+    padding: 40px 0;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .card {
+    page-break-inside: avoid;
+  }
+}
 </style>
 </head>
 <body>
+<!-- Hero Section -->
 <section class="hero">
-<h1>Mohammed Sufiyan</h1>
-<p>Product Consultant | SaaS | HRMS & Payroll Solutions | Business Development</p>
-<a class="btn" href="https://www.linkedin.com/in/mohammed-sufiyan-783b17204/">LinkedIn</a>
-<a class="btn" href="mailto:sufi4urox@outlook.com">Contact Me</a>
+  <div class="hero-content">
+    <h1>Mohammed Sufiyan</h1>
+    <p>Product Consultant | SaaS | HRMS & Payroll Solutions | Business Development</p>
+    <div class="cta-buttons">
+      <a class="btn" href="https://www.linkedin.com/in/mohammed-sufiyan-783b17204/">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a class="btn btn-secondary" href="mailto:sufi4urox@outlook.com">
+        <i class="fas fa-envelope"></i> Contact Me
+      </a>
+      <a class="btn btn-secondary" href="#contact">
+        <i class="fas fa-download"></i> Get in Touch
+      </a>
+    </div>
+  </div>
 </section>
 
 <div class="container">
-<h2>About Me</h2>
-<div class="card">
-Results-driven Product Consultant with 3+ years of experience in SaaS, HRMS, Payroll Solutions, CRM systems, lead generation, market research and international business development. Experienced in leveraging AI tools including Gemini, ChatGPT, Claude and modern sales technologies to drive growth and customer success.
+  <!-- About Me Section -->
+  <section>
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>
+        Results-driven Product Consultant with 3+ years of progressive experience in SaaS, HRMS, Payroll Solutions, CRM systems, lead generation, market research, and international business development. Proven track record of driving revenue growth, optimizing sales operations, and delivering strategic solutions for enterprise clients.
+      </p>
+      <p>
+        Passionate about leveraging technology and data-driven insights to solve complex business challenges. Skilled in managing cross-functional teams, developing go-to-market strategies, and implementing scalable business solutions. Committed to continuous learning with expertise in AI tools, business intelligence, and modern SaaS ecosystems.
+      </p>
+      <p>
+        Currently at Greytip Software, focusing on product strategy and customer success for HR & Payroll solutions. Experienced in international markets with strong understanding of market dynamics and customer needs across diverse geographies.
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Skills Section -->
+  <section>
+    <h2>Core Skills & Expertise</h2>
+    <div class="card">
+      <div class="skills-container">
+        <span class="tag">Salesforce CRM</span>
+        <span class="tag">Apollo.io</span>
+        <span class="tag">Lusha</span>
+        <span class="tag">HRMS Solutions</span>
+        <span class="tag">Payroll SaaS</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Tableau</span>
+        <span class="tag">AI Tools</span>
+        <span class="tag">Lead Generation</span>
+        <span class="tag">Business Development</span>
+        <span class="tag">Sales Operations</span>
+        <span class="tag">Market Research</span>
+        <span class="tag">Product Strategy</span>
+        <span class="tag">Data Analysis</span>
+        <span class="tag">Client Relations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Experience Section -->
+  <section>
+    <h2>Professional Experience</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Greytip Software</h3>
+        <div class="card-meta">
+          <i class="fas fa-briefcase"></i>
+          <span>Product Consultant</span>
+        </div>
+        <div class="card-meta">
+          <i class="fas fa-calendar"></i>
+          <span>Jan 2024 – Present</span>
+        </div>
+        <div class="card-description">
+          Leading product strategy and customer success initiatives for HRMS and Payroll solutions.
+        </div>
+        <ul class="achievements">
+          <li>Developed and executed product roadmap initiatives</li>
+          <li>Managed enterprise client relationships and implementations</li>
+          <li>Conducted market analysis and competitive intelligence</li>
+          <li>Facilitated cross-functional teams for product launches</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Foundit</h3>
+        <div class="card-meta">
+          <i class="fas fa-briefcase"></i>
+          <span>Senior Sales Executive</span>
+        </div>
+        <div class="card-meta">
+          <i class="fas fa-calendar"></i>
+          <span>Nov 2022 – Jan 2024</span>
+        </div>
+        <div class="card-description">
+          Drove revenue growth through strategic client acquisition and relationship management.
+        </div>
+        <ul class="achievements">
+          <li>Generated 40%+ revenue growth in assigned territory</li>
+          <li>Managed portfolio of 50+ enterprise accounts</li>
+          <li>Built and mentored sales team of 5+ members</li>
+          <li>Implemented CRM best practices improving conversion by 25%</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>SKIL Travels</h3>
+        <div class="card-meta">
+          <i class="fas fa-briefcase"></i>
+          <span>Corporate Sales Executive</span>
+        </div>
+        <div class="card-meta">
+          <i class="fas fa-calendar"></i>
+          <span>Jul 2022 – Nov 2022</span>
+        </div>
+        <div class="card-description">
+          Managed B2B sales operations and corporate account development.
+        </div>
+        <ul class="achievements">
+          <li>Acquired 15+ new corporate clients</li>
+          <li>Executed market research for new service offerings</li>
+          <li>Developed sales collateral and training materials</li>
+          <li>Achieved 95%+ client retention rate</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Ramada</h3>
+        <div class="card-meta">
+          <i class="fas fa-briefcase"></i>
+          <span>Business Sales Operations</span>
+        </div>
+        <div class="card-meta">
+          <i class="fas fa-calendar"></i>
+          <span>Oct 2021 – Jul 2022</span>
+        </div>
+        <div class="card-description">
+          Streamlined sales operations and implemented process improvements.
+        </div>
+        <ul class="achievements">
+          <li>Optimized sales pipeline reducing cycle time by 20%</li>
+          <li>Implemented sales tracking and reporting systems</li>
+          <li>Coordinated with marketing on lead generation campaigns</li>
+          <li>Managed partner relationships and channel programs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section>
+    <h2>Certifications & Continuous Learning</h2>
+    <div class="cert-grid">
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <div>
+          <strong>AI Upskilling Program</strong>
+          <span>Qualcomm Academy</span>
+        </div>
+      </div>
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <div>
+          <strong>Generative AI Certification</strong>
+          <span>greytHR Academy</span>
+        </div>
+      </div>
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <div>
+          <strong>Power BI & Data Analytics</strong>
+          <span>UniAthena</span>
+        </div>
+      </div>
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <div>
+          <strong>Leadership Skills</strong>
+          <span>Alison</span>
+        </div>
+      </div>
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <div>
+          <strong>Business Communication</strong>
+          <span>Professional Certification</span>
+        </div>
+      </div>
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <div>
+          <strong>Sales Operations Excellence</strong>
+          <span>Industry Training</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages Section -->
+  <section>
+    <h2>Languages</h2>
+    <div class="card">
+      <div class="language-list">
+        <div class="language-item">
+          <i class="fas fa-globe"></i>
+          <span><strong>English</strong> - Fluent</span>
+        </div>
+        <div class="language-item">
+          <i class="fas fa-globe"></i>
+          <span><strong>Hindi</strong> - Native</span>
+        </div>
+        <div class="language-item">
+          <i class="fas fa-globe"></i>
+          <span><strong>Urdu</strong> - Fluent</span>
+        </div>
+        <div class="language-item">
+          <i class="fas fa-globe"></i>
+          <span><strong>Kannada</strong> - Conversational</span>
+        </div>
+        <div class="language-item">
+          <i class="fas fa-globe"></i>
+          <span><strong>Arabic</strong> - Basic</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <div>
+          <strong>Email</strong>
+          <p>sufi4urox@outlook.com</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <div>
+          <strong>Location</strong>
+          <p>Bengaluru, India</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-linkedin"></i>
+        <div>
+          <strong>LinkedIn</strong>
+          <p><a href="https://www.linkedin.com/in/mohammed-sufiyan-783b17204/" style="color: #3b82f6; text-decoration: none;">linkedin.com/in/mohammed-sufiyan-783b17204</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="card" style="text-align: center;">
+      <p style="margin-bottom: 20px;">I'm open to opportunities in Product Consultation, Business Development, and Sales Operations. Feel free to reach out!</p>
+      <a class="btn" href="mailto:sufi4urox@outlook.com">
+        <i class="fas fa-paper-plane"></i> Send Me an Email
+      </a>
+    </div>
+  </section>
 </div>
 
-<h2>Core Skills</h2>
-<div class="card">
-<span class="tag">Salesforce</span>
-<span class="tag">Apollo.io</span>
-<span class="tag">Lusha</span>
-<span class="tag">HRMS</span>
-<span class="tag">Payroll SaaS</span>
-<span class="tag">Power BI</span>
-<span class="tag">AI Tools</span>
-<span class="tag">Lead Generation</span>
-<span class="tag">CRM</span>
-<span class="tag">Business Development</span>
-</div>
-
-<h2>Professional Experience</h2>
-<div class="grid">
-<div class="card">
-<h3>Greytip Software</h3>
-<p><strong>Product Consultant</strong><br>Jan 2024 – Present</p>
-</div>
-<div class="card">
-<h3>Foundit</h3>
-<p><strong>Senior Sales Executive</strong><br>Nov 2022 – Jan 2024</p>
-</div>
-<div class="card">
-<h3>SKIL Travels</h3>
-<p><strong>Corporate Sales Executive</strong><br>Jul 2022 – Nov 2022</p>
-</div>
-<div class="card">
-<h3>Ramada</h3>
-<p><strong>Business Sales Operations</strong><br>Oct 2021 – Jul 2022</p>
-</div>
-</div>
-
-<h2>Certifications</h2>
-<div class="card">
-<ul>
-<li>Qualcomm Academy – AI Upskilling</li>
-<li>Generative AI – greytHR Academy</li>
-<li>Power BI – UniAthena</li>
-<li>Leadership Skills – Alison</li>
-<li>Communication Skills Certification</li>
-</ul>
-</div>
-
-<h2>Languages</h2>
-<div class="card">English • Hindi • Urdu • Kannada • Arabic</div>
-
-<h2>Contact</h2>
-<div class="card">
-Email: sufi4urox@outlook.com<br>
-Location: Bengaluru, India<br>
-LinkedIn: linkedin.com/in/mohammed-sufiyan-783b17204
-</div>
-</div>
-
+<!-- Footer -->
 <div class="footer">
-© 2026 Mohammed Sufiyan | Built with GitHub Pages
+  <p>© 2026 Mohammed Sufiyan | Built with GitHub Pages & ❤️</p>
 </div>
+
 </body>
 </html>
